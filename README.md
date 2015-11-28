@@ -123,6 +123,15 @@ This should result in
 ...
 ```
 
+## Error messages
+
+Possible responseText messages sent with a 401 error status:
+
+* `no_jwt_received`
+* `jwt_empty`
+* `jwt_expired`
+* `jwt_error`
+* `no_valid_user`
 
 
 ## Licence

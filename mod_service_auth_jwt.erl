@@ -18,7 +18,6 @@
     createToken/2
 ]).
 
-
 observe_service_authorize(#service_authorize{}, Context) ->
     case z_context:get_req_header("authorization", Context) of
         "Bearer " ++ Jwt ->
@@ -65,7 +64,7 @@ maybe_login_user(UserId, Context) ->
 
 return_error(Reason, Context) ->
     ReqData = z_context:get_reqdata(Context),
-    ReqData1 = wrq:set_resp_body(Reason ++ "\n", ReqData),
+    ReqData1 = wrq:set_resp_body(Reason, ReqData),
     {{halt, 401}, ReqData1, Context}.
 
 
